@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <a href="/"><- Kembali</a>
+            <br>
+            <h2>Detail Mahasiswa</h2>
+            <img src="{{ mahasiswa['foto'] }}" alt="">
+            <h4>{{ mahasiswa['nama'] }}</h4>
+            <h5>Email: {{ mahasiswa['email'] }}</h5>
+            <h5>Nilai: {{ mahasiswa['nilai'] }}</h5>
+            {% if mahasiswa['nilai'] > 50 %}
+                <p class="text-success">lulus</p>
+            {% else %}
+                <p class="text-danger">belum lulus</p>
+            {% endif %}
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+ini tulisan tidak akan muncul

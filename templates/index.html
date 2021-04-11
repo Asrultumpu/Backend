@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+
+            <form action="/add" method="post">
+                <h5>Tambah Data</h5>
+                <input class="form-control" placeholder="nama" type="text" name="nama" id="nama" autocomplete="off">
+                <input class="form-control" placeholder="email" type="text" name="email" id="email" autocomplete="off">
+                <input class="form-control" placeholder="nilai" type="number" name="nilai" id="nilai"
+                    autocomplete="off">
+                <button type="submit" class="btn btn-sm mt-2 btn-primary" name="submit" value="submit">Submit</button>
+                <div class="mb-3">
+            </form>
+
+
+            <!-- <form action="/add" method="post">
+                <h3>Tambah data</h3>
+                <input placeholder="nama" type="text" name="nama" id="nama" autocomplete="off">
+                <br>
+                <input placeholder="nilai" type="number" name="nilai" id="nilai" autocomplete="off">
+                <br>
+                <button type="submit" class="btn btn-sm mt-2 btn-primary" name="submit" value="submit">Submit</button>
+            </form> -->
+            <br>
+
+            <h2>Daftar Mahasiswa</h2>
+            <ol>
+                {% for m in daftar_mahasiswa %}
+                <li>
+                    <a href="/detail/{{ m['id'] }}"> {{ m['nama'] }} </a> |
+                    <a href="/update/{{ m['id'] }}" class="text-warning"> update </a> |
+                    <a href="/delete/{{ m['id'] }}" class="text-danger"> delete </a>
+                </li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+ini tulisan tidak akan muncul
